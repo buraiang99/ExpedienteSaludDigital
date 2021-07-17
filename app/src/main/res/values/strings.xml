@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Expediente Salud Digital</string>
+    <string name="cedula_paciente">Cedula</string>
+    <string name="nombre_paciente">Nombre</string>
+    <string name="edad_paciente">Edad</string>
+    <string name="tipo_sangre">Tipo de Sangre</string>
+    <string name="estado_civil_paciente">Estado Civil</string>
+    <string name="contrasenna_paciente">Contraseña</string>
+    <string name="direccion_paciente">Otras Señas</string>
+    <string name="registrar_paciente">Registrar</string>
 </resources>
