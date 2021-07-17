@@ -9,6 +9,9 @@ public class Paciente {
     private String domicilio;
     private String pass;
 
+    public Paciente() {
+    }
+
     public String getCedula() {
         return cedula;
     }

@@ -1,5 +1,6 @@
 package cr.ac.ucr.expedientesaluddigital;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,12 +23,13 @@ public class LoginPaciente extends AppCompatActivity {
     EditText passTxt;
     TextView pruebatv;
     Button loginBtn;
+    Paciente TEMP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
-
+        TEMP=new Paciente();
         cedulaTxt=findViewById(R.id.cedula_txt);
         passTxt=findViewById(R.id.pass_txt);
         pruebatv=findViewById(R.id.prueba_tv);
@@ -52,7 +54,13 @@ public class LoginPaciente extends AppCompatActivity {
                 try {
                     if(response.isSuccessful()){
                         Paciente p=response.body();
-                        pruebatv.setText(p.getNombre());
+                        TEMP=p;
+                        if(p.getPass().equals(passTxt.getText().toString())){
+                            Intent intentInicarSesion=new Intent(getApplicationContext(), LoginPaciente.class);
+                            startActivity(intentInicarSesion);
+                        }else{
+                            pruebatv.setText("Datos erroneos");
+                        }
                     }
                 }catch (Exception ex){
                     Toast.makeText(LoginPaciente.this,ex.getMessage(),Toast.LENGTH_SHORT).show();
