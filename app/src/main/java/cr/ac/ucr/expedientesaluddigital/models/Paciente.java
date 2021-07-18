@@ -8,8 +8,16 @@ public class Paciente {
     private String estadoCivil;
     private String domicilio;
     private String pass;
+    private static Paciente paciente;
 
     public Paciente() {
+    }
+
+    public static Paciente getInstance(Paciente p){
+        if(paciente==null){
+            paciente=p;
+        }
+        return paciente;
     }
 
     public String getCedula() {

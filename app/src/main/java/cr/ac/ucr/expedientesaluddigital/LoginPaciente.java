@@ -23,13 +23,11 @@ public class LoginPaciente extends AppCompatActivity {
     EditText passTxt;
     TextView pruebatv;
     Button loginBtn;
-    Paciente TEMP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
-        TEMP=new Paciente();
         cedulaTxt=findViewById(R.id.cedula_txt);
         passTxt=findViewById(R.id.pass_txt);
         pruebatv=findViewById(R.id.prueba_tv);
@@ -54,9 +52,9 @@ public class LoginPaciente extends AppCompatActivity {
                 try {
                     if(response.isSuccessful()){
                         Paciente p=response.body();
-                        TEMP=p;
+                        Paciente.getInstance(p);
                         if(p.getPass().equals(passTxt.getText().toString())){
-                            Intent intentInicarSesion=new Intent(getApplicationContext(), LoginPaciente.class);
+                            Intent intentInicarSesion=new Intent(getApplicationContext(), MainMenu.class);
                             startActivity(intentInicarSesion);
                         }else{
                             pruebatv.setText("Datos erroneos");
