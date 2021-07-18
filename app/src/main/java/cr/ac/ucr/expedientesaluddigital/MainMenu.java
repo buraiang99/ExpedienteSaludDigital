@@ -22,7 +22,7 @@ public class MainMenu extends AppCompatActivity {
         nombretv.setText("Bienvenido "+p.getNombre());
         citasbtn=findViewById(R.id.citas_btn);
         citasbtn.setOnClickListener(v->{
-            Intent intentInicarSesion=new Intent(getApplicationContext(), LoginPaciente.class);
+            Intent intentInicarSesion=new Intent(getApplicationContext(), ListaCitas.class);
             startActivity(intentInicarSesion);
         });
     }

@@ -10,7 +10,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.List;
+
+import cr.ac.ucr.expedientesaluddigital.interfaces.CitasCedulaAPI;
 import cr.ac.ucr.expedientesaluddigital.interfaces.PacienteAPI;
+import cr.ac.ucr.expedientesaluddigital.models.Cita;
+import cr.ac.ucr.expedientesaluddigital.models.Citas;
 import cr.ac.ucr.expedientesaluddigital.models.Paciente;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -54,8 +59,30 @@ public class LoginPaciente extends AppCompatActivity {
                         Paciente p=response.body();
                         Paciente.getInstance(p);
                         if(p.getPass().equals(passTxt.getText().toString())){
-                            Intent intentInicarSesion=new Intent(getApplicationContext(), MainMenu.class);
-                            startActivity(intentInicarSesion);
+                            Retrofit retrofit=new Retrofit.Builder().baseUrl("http://gerardo42-001-site1.gtempurl.com/")
+                                    .addConverterFactory(GsonConverterFactory.create()).build();
+                            CitasCedulaAPI cita=retrofit.create(CitasCedulaAPI.class);
+                            Call<List<Cita>> call2=cita.find(codigo);
+                            call2.enqueue(new Callback<List<Cita>>() {
+                                @Override
+                                public void onResponse(Call<List<Cita>> call, Response<List<Cita>> response) {
+                                    try {
+                                        if(response.isSuccessful()){
+                                            List<Cita> citas=response.body();
+                                            Citas.getInstance(citas);
+                                            Intent intentInicarSesion=new Intent(getApplicationContext(), MainMenu.class);
+                                            startActivity(intentInicarSesion);
+                                        }
+                                    }catch (Exception ex){
+                                        Toast.makeText(LoginPaciente.this,ex.getMessage(),Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(Call<List<Cita>> call, Throwable t) {
+
+                                }
+                            });
                         }else{
                             pruebatv.setText("Datos erroneos");
                         }
@@ -70,5 +97,8 @@ public class LoginPaciente extends AppCompatActivity {
 
             }
         });
+    }
+    private void obtenerCitas(String codigo){
+
     }
 }
