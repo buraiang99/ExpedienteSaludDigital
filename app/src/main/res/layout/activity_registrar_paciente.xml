@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/backgroundSalud">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="409dp"
-        android:layout_height="98dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundSalud"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -17,7 +19,9 @@
             android:id="@+id/tvTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
+            android:backgroundTint="@color/white"
+            android:text="@string/titulo_registrar"
+            android:textColor="@color/backgroundInteriorSalud"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,33 +30,56 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="409dp"
-        android:layout_height="631dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="3dp"
+        android:background="@color/backgroundInteriorSalud"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="1.0">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilCedula"
-            android:layout_width="407dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="100dp"
+            android:backgroundTint="@color/letrarSalud"
+            android:textColorHint="@color/letrarSalud"
+            app:boxBackgroundColor="@color/backgroundInteriorSalud"
+            app:boxStrokeColor="@color/letrarSalud"
+            app:endIconTint="@color/letrarSalud"
+            app:hintTextColor="@color/letrarSalud"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconTint="@color/letrarSalud">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tietCedula"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/cedula_paciente" />
+                android:hint="@string/cedula_paciente"
+                android:textColor="@color/letrarSalud" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilNombre"
-            android:layout_width="407dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="100dp"
+            android:textColorHint="@color/letrarSalud"
+            app:boxBackgroundColor="@color/backgroundInteriorSalud"
+            app:boxStrokeColor="@color/letrarSalud"
+            app:endIconTint="@color/letrarSalud"
+            app:helperTextTextColor="@color/letrarSalud"
+            app:hintTextColor="@color/letrarSalud"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tilCedula">
@@ -61,118 +88,181 @@
                 android:id="@+id/tietNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/nombre_paciente" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilEdad"
-            android:layout_width="407dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tilNombre">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tietEdad"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/edad_paciente" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilTipoSangre"
-            android:layout_width="407dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tilEdad">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tietTipoSangre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/tipo_sangre" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilEstadoCivil"
-            android:layout_width="407dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tilTipoSangre">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tietEstaCivil"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/estado_civil_paciente" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilPassword"
-            android:layout_width="407dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tilDireccion">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tietPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/contrasenna_paciente" />
+                android:hint="@string/nombre_paciente"
+                android:textColor="@color/letrarSalud" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilDireccion"
-            android:layout_width="407dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="100dp"
+            android:textColorHint="@color/letrarSalud"
+            app:boxBackgroundColor="@color/backgroundInteriorSalud"
+            app:boxStrokeColor="@color/letrarSalud"
+            app:endIconTint="@color/letrarSalud"
+            app:hintTextColor="@color/letrarSalud"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sDistrito">
+            app:layout_constraintTop_toBottomOf="@+id/sDistrito"
+            app:startIconTint="@color/letrarSalud">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tietDireccion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/direccion_paciente" />
+                android:drawableTint="@color/black"
+                android:foregroundTint="@color/black"
+                android:hint="@string/direccion_paciente"
+                android:outlineAmbientShadowColor="@color/black"
+                android:outlineSpotShadowColor="@color/black"
+                android:shadowColor="@color/black"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/black"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Spinner
             android:id="@+id/sProvincia"
-            android:layout_width="407dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/black"
+            android:prompt="@string/mensaje_provincia"
+            android:spinnerMode="dialog"
+            app:layout_constraintEnd_toStartOf="@+id/sCanton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tilEstadoCivil" />
+            app:layout_constraintTop_toBottomOf="@+id/sTipoSangre" />
 
         <Spinner
             android:id="@+id/sCanton"
-            android:layout_width="407dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="50dp"
+            android:backgroundTint="@color/black"
+            android:prompt="@string/mensaje_canton"
+            android:spinnerMode="dialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sProvincia"
+            app:layout_constraintTop_toBottomOf="@+id/sEstadoCivil" />
+
+        <Spinner
+            android:id="@+id/sDistrito"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="100dp"
+            android:backgroundTint="@color/black"
+            android:prompt="@string/mensaje_distrito"
+            android:spinnerMode="dialog"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sProvincia" />
 
         <Spinner
-            android:id="@+id/sDistrito"
-            android:layout_width="407dp"
+            android:id="@+id/sTipoSangre"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="50dp"
+            android:backgroundTint="@color/black"
+            android:prompt="@string/mensaje_tipo_sangre"
+            android:spinnerMode="dialog"
+            app:layout_constraintEnd_toStartOf="@+id/sEstadoCivil"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etnEdad" />
+
+        <Spinner
+            android:id="@+id/sEstadoCivil"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="50dp"
+            android:backgroundTint="@color/black"
+            android:prompt="@string/mensaje_estado_civil"
+            android:spinnerMode="dialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sTipoSangre"
+            app:layout_constraintTop_toBottomOf="@+id/etnEdad" />
+
+        <EditText
+            android:id="@+id/etnEdad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="100dp"
+            android:backgroundTint="@color/black"
+            android:ems="10"
+            android:hint="@string/mensaje_edad"
+            android:inputType="number"
+            android:outlineAmbientShadowColor="@color/black"
+            android:outlineSpotShadowColor="@color/black"
+            android:shadowColor="@color/black"
+            android:textColor="@color/letrarSalud"
+            android:textColorHighlight="@color/black"
+            android:textColorHint="@color/letrarSalud"
+            android:textColorLink="@color/letrarSalud"
+            android:textCursorDrawable="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sCanton" />
+            app:layout_constraintTop_toBottomOf="@+id/tilNombre" />
+
+        <EditText
+            android:id="@+id/etpPasword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="100dp"
+            android:backgroundTint="@color/black"
+            android:drawableTint="@color/black"
+            android:ems="10"
+            android:foregroundTint="@color/black"
+            android:hint="@string/pasword_paciente"
+            android:inputType="textPassword"
+            android:outlineAmbientShadowColor="@color/black"
+            android:outlineSpotShadowColor="@color/black"
+            android:shadowColor="@color/black"
+            android:textColor="@color/letrarSalud"
+            android:textColorHighlight="@color/black"
+            android:textColorLink="@color/black"
+            android:textCursorDrawable="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilDireccion" />
 
         <Button
             android:id="@+id/btnRegistrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/btnRegistrar"
+            android:backgroundTint="@color/btnRegistrar"
             android:text="@string/registrar_paciente"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tilPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/etpPasword" />
+
+        <TextView
+            android:id="@+id/tvPrueba"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnRegistrar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

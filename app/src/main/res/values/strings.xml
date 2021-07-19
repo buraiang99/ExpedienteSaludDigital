@@ -3,9 +3,16 @@
     <string name="cedula_paciente">Cedula</string>
     <string name="nombre_paciente">Nombre</string>
     <string name="edad_paciente">Edad</string>
-    <string name="tipo_sangre">Tipo de Sangre</string>
-    <string name="estado_civil_paciente">Estado Civil</string>
+    <string name="titulo_registrar">Registro</string>
     <string name="contrasenna_paciente">Contraseña</string>
     <string name="direccion_paciente">Otras Señas</string>
     <string name="registrar_paciente">Registrar</string>
+    <string name="inicio_registrar">Registrarse</string>
+    <string name="mensaje_provincia">Seleccione una provincia</string>
+    <string name="mensaje_canton">Seleccione un cantón</string>
+    <string name="mensaje_distrito">Seleccione un distrito</string>
+    <string name="mensaje_tipo_sangre">Seleccione su tipo de sangre</string>
+    <string name="mensaje_estado_civil">Seleccione su estado civil</string>
+    <string name="mensaje_edad">Edad</string>
+    <string name="pasword_paciente">Contraseña</string>
 </resources>

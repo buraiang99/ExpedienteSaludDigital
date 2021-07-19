@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="btnRegistrar">#03053B</color>
+    <color name="backgroundSalud">#0071BC</color>
+    <color name="backgroundInteriorSalud">#E6F3FF</color>
+    <color name="letrarSalud">#252623</color>
 </resources>

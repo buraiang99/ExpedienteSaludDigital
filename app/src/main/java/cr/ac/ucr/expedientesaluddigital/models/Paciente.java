@@ -20,6 +20,19 @@ public class Paciente {
         return paciente;
     }
 
+    @Override
+    public String toString() {
+        return "Paciente{" +
+                "cedula='" + cedula + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", edad=" + edad +
+                ", tipoSangre='" + tipoSangre + '\'' +
+                ", estadoCivil='" + estadoCivil + '\'' +
+                ", domicilio='" + domicilio + '\'' +
+                ", pass='" + pass + '\'' +
+                '}';
+    }
+
     public String getCedula() {
         return cedula;
     }
