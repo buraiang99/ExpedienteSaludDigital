@@ -3,13 +3,13 @@ package cr.ac.ucr.expedientesaluddigital.models;
 public class Cita {
     private int iD_Cita;
     private String cedulaPaciente;
-    private int centroSalud;
-    private int especialidad;
+    private String centroSalud;
+    private String especialidad;
     private String fecha;
     private String hora;
     private String diagnostico;
     private String nombreDoctor;
-    private String apellidoDoctor;
+    private String apellidosDoctor;
     public Cita(){
 
     }
@@ -30,19 +30,19 @@ public class Cita {
         this.cedulaPaciente = cedulaPaciente;
     }
 
-    public int getCentroSalud() {
+    public String getCentroSalud() {
         return centroSalud;
     }
 
-    public void setCentroSalud(int centroSalud) {
+    public void setCentroSalud(String centroSalud) {
         this.centroSalud = centroSalud;
     }
 
-    public int getEspecialidad() {
+    public String getEspecialidad() {
         return especialidad;
     }
 
-    public void setEspecialidad(int especialidad) {
+    public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
 
@@ -78,11 +78,11 @@ public class Cita {
         this.nombreDoctor = nombreDoctor;
     }
 
-    public String getApellidoDoctor() {
-        return apellidoDoctor;
+    public String getApellidosDoctor() {
+        return apellidosDoctor;
     }
 
-    public void setApellidoDoctor(String apellidoDoctor) {
-        this.apellidoDoctor = apellidoDoctor;
+    public void setApellidosDoctor(String apellidoDoctor) {
+        this.apellidosDoctor = apellidoDoctor;
     }
 }

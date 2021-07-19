@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:id="@+id/item_cita_xml"
+    android:id="@+id/item_vacuna_xml"
     android:background="@color/teal_700">
 
     <TextView
-        android:id="@+id/fecha_tv"
+        android:id="@+id/fecha_vacuna_tv"
         android:layout_width="0dp"
         android:layout_height="15dp"
         android:layout_marginStart="16dp"
@@ -16,26 +16,26 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.514" />
+        app:layout_constraintVertical_bias="0.542" />
 
     <TextView
-        android:id="@+id/hora_tv"
+        android:id="@+id/nombre_vacuna_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hora"
+        android:text="Nombre"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/centro_salud_tv"
-        app:layout_constraintHorizontal_bias="0.352"
-        app:layout_constraintStart_toEndOf="@+id/fecha_tv"
+        app:layout_constraintEnd_toStartOf="@+id/centro_salud_vacuna_tv"
+        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintStart_toEndOf="@+id/fecha_vacuna_tv"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.58" />
 
     <TextView
-        android:id="@+id/centro_salud_tv"
+        android:id="@+id/centro_salud_vacuna_tv"
         android:layout_width="0dp"
         android:layout_height="19dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="36dp"
         android:text="CentroSalud"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
