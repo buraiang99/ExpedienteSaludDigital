@@ -1,5 +1,6 @@
 package cr.ac.ucr.expedientesaluddigital;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -21,6 +22,7 @@ import java.util.Map;
 import cr.ac.ucr.expedientesaluddigital.interfaces.CantonAPI;
 import cr.ac.ucr.expedientesaluddigital.interfaces.DistritoAPI;
 import cr.ac.ucr.expedientesaluddigital.interfaces.DomicilioAPI;
+import cr.ac.ucr.expedientesaluddigital.interfaces.PacienteAPI;
 import cr.ac.ucr.expedientesaluddigital.interfaces.ProvinciaAPI;
 import cr.ac.ucr.expedientesaluddigital.models.Canton;
 import cr.ac.ucr.expedientesaluddigital.models.Distrito;
@@ -82,13 +84,55 @@ public class RegistrarPaciente extends AppCompatActivity {
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(getApplicationContext(), "Click", Toast.LENGTH_LONG).show();
+                //registarDomicilio();
                 registarPaciente();
             }
         });
         //obtenerProvincias();
 
     } // fin onCreate
+
+    private void registarPaciente() {
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://gerardo42-001-site1.gtempurl.com/")
+                .addConverterFactory(GsonConverterFactory.create()).build();
+
+        PacienteAPI pacienteAPI = retrofit.create(PacienteAPI.class);
+
+        if (tietCedula.length() == 0 && tietNombre.length() == 0 && etEdad.length() == 0 && etPasword.length() == 0 && tietDireccion.length() == 0) {
+            Toast.makeText(this, "Todos los campos debe estar llenos", Toast.LENGTH_LONG).show();
+        } else {
+
+            registarDomicilio();
+            Paciente paciente = new Paciente();
+            paciente.setCedula(tietCedula.getText().toString());
+            paciente.setNombre(tietNombre.getText().toString());
+            paciente.setEdad(Integer.parseInt(etEdad.getText().toString()));
+            paciente.setEstadoCivil((String) spinnerEstadoCivil.getSelectedItem());
+            paciente.setPass(etPasword.getText().toString());
+            paciente.setTipoSangre((String) spinnerTipoSangre.getSelectedItem());
+            paciente.setDomicilio("vacio");
+            Toast.makeText(this, paciente.toString(), Toast.LENGTH_SHORT).show();
+
+            registarDomicilio();
+
+            Call<Paciente> pacienteCall = pacienteAPI.insertarPaciente(paciente);
+            pacienteCall.enqueue(new Callback<Paciente>() {
+                @Override
+                public void onResponse(Call<Paciente> call, Response<Paciente> response) {
+                    tvPrueba.setText("Code: "+response.code());
+                    return;
+                }
+
+                @Override
+                public void onFailure(Call<Paciente> call, Throwable t) {
+
+                }
+            });
+            Intent intentPaginaPrincipal = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intentPaginaPrincipal);
+        }
+    }//fin registrarPaciente
 
     protected void llenarSangreCivil() {
         ArrayList<String> arrayListTipoSangre = new ArrayList<>();
@@ -195,7 +239,7 @@ public class RegistrarPaciente extends AppCompatActivity {
         });
     }// fin llenarDistrito
 
-    protected void registarPaciente() {
+    protected void registarDomicilio() {
 
         Retrofit retrofit=new Retrofit.Builder().baseUrl("http://gerardo42-001-site1.gtempurl.com/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
@@ -206,33 +250,27 @@ public class RegistrarPaciente extends AppCompatActivity {
         Distrito distrito = (Distrito) spinnerDistrito.getSelectedItem();
 
         Domicilio domicilio = new Domicilio();
-        domicilio.setIdProvincia(1);
-        domicilio.setIdCanton(2);
-        domicilio.setIdDistrito(3);
-        domicilio.setDetalles("prueba4");
-
-        Map<String, String> fields = new HashMap<>();
-        fields.put("idProvincia", "3");
-        fields.put("idCanton", "1");
-        fields.put("idDistrito", "2");
-        fields.put("detalles", "Prueba6");
+        domicilio.setIdProvincia(provincia.getId());
+        domicilio.setIdCanton(canton.getId());
+        domicilio.setIdDistrito(distrito.getId());
+        domicilio.setDetalles(tietDireccion.getText().toString());
 
         Call<Domicilio> domicilioCall = domicilioAPI.insertarDomicilio(domicilio);
+        Toast.makeText(getApplicationContext(), "Registrado correctamente", Toast.LENGTH_LONG).show();
         domicilioCall.enqueue(new Callback<Domicilio>() {
             @Override
             public void onResponse(Call<Domicilio> call, Response<Domicilio> response) {
                 if (!response.isSuccessful()) {
-                    tvPrueba.setText("Code: "+response.code());
+                    Toast.makeText(getApplicationContext(), "Code: ", Toast.LENGTH_LONG).show();
+                    //tvPrueba.setText("Code: "+response.code());
+                    Domicilio domicilioResponce = response.body();
+                    String content = "";
+                    content+= "Code: "+response.code()+"\n";
+                    content += "ID Provincia: "+ domicilioResponce.getIdProvincia()+"\n";
+                    content += "ID Canton: "+domicilioResponce.getIdCanton()+"\n";
+                    tvPrueba.setText(content);
                     return;
                 }
-                /*Domicilio domicilioResponce = response.body();
-                String content = "";
-                content+= "Code: "+response.code()+"\n";
-                content += "ID Provincia: "+ domicilioResponce.getIdProvincia()+"\n";
-                content += "ID Canton: "+domicilioResponce.getIdCanton()+"\n";
-                tvPrueba.setText(content);*/
-                //Domicilio domicilio1Responce = response.body();
-                //Toast.makeText(getApplicationContext(), "Code: "+response.code()+"\n "+domicilio1Responce.toString(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -240,17 +278,5 @@ public class RegistrarPaciente extends AppCompatActivity {
                 tvPrueba.setText(t.toString());
             }
         });
-
-        Paciente paciente = new Paciente();
-        paciente.setCedula(tietCedula.getText().toString());
-        paciente.setNombre(tietNombre.getText().toString());
-        paciente.setEdad(Integer.parseInt(etEdad.getText().toString()));
-        paciente.setEstadoCivil((String) spinnerEstadoCivil.getSelectedItem());
-        paciente.setPass(etPasword.getText().toString());
-        paciente.setTipoSangre((String) spinnerTipoSangre.getSelectedItem());
-        paciente.setDomicilio(provincia.getId()+", "+canton.getId()+", "+distrito.getId());
-
-        Toast.makeText(this, paciente.toString(), Toast.LENGTH_SHORT).show();
-
     }// fin
 } // fin class

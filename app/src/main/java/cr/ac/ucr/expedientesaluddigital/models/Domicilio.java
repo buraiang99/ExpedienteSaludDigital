@@ -16,16 +16,6 @@ public class Domicilio {
         this.detalles = detalles;
     }
 
-    @Override
-    public String toString() {
-        return "Domicilio{" +
-                "idProvincia=" + idProvincia +
-                ", idCanton=" + idCanton +
-                ", idDistrito=" + idDistrito +
-                ", Detalles='" + detalles + '\'' +
-                '}';
-    }
-
     public int getIdProvincia() {
         return idProvincia;
     }
@@ -51,7 +41,7 @@ public class Domicilio {
     }
 
     public String getDetalles() {
-        return this.detalles;
+        return detalles;
     }
 
     public void setDetalles(String detalles) {

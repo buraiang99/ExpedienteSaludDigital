@@ -19,9 +19,9 @@ public interface DomicilioAPI {
                                       @Field("idDistrito") int idDistrito,
                                       @Field("detalles") String detalles);
 
-    @FormUrlEncoded
-    @POST("api/Domicilio")
-    Call<Domicilio> insertarDomicilio(@FieldMap Map<String, String> fields);
+    //@FormUrlEncoded
+    //@POST("api/Domicilio")
+    //Call<Domicilio> insertarDomicilio(@FieldMap Map<String, String> fields);
 
     @POST("api/Domicilio")
     Call<Domicilio> insertarDomicilio(@Body Domicilio domicilio);
