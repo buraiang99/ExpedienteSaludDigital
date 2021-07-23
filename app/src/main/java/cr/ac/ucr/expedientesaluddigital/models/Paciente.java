@@ -8,6 +8,7 @@ public class Paciente {
     private String estadoCivil;
     private String domicilio;
     private String pass;
+    private String numero;
     private static Paciente paciente;
 
     public Paciente() {
@@ -87,5 +88,13 @@ public class Paciente {
 
     public void setPass(String pass) {
         this.pass = pass;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 }

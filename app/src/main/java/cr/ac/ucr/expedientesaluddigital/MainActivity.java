@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button iniciarSesionBtn;
     Button registarPacienteBtn;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         iniciarSesionBtn = findViewById(R.id.iniciar_sesion_btn);
         registarPacienteBtn = findViewById(R.id.registar_paciente_btn);
+
 
         iniciarSesionBtn.setOnClickListener(v->{
             Intent intentInicarSesion=new Intent(getApplicationContext(), LoginPaciente.class);
@@ -32,5 +35,6 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intentRegistrarPaciente);
                 }
         );
+
     }
 }

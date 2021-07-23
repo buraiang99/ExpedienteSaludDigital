@@ -49,6 +49,7 @@ public class RegistrarPaciente extends AppCompatActivity {
     private TextInputEditText tietDireccion;
     private EditText etPasword;
     private TextView tvPrueba;
+    private TextInputEditText tietNumero;
 
     private Button btnRegistrar;
 
@@ -68,8 +69,7 @@ public class RegistrarPaciente extends AppCompatActivity {
         tietCedula = findViewById(R.id.tietCedula);
         tietNombre = findViewById(R.id.tietNombre);
         tietDireccion = findViewById(R.id.tietDireccion);
-
-        tvPrueba = findViewById(R.id.tvPrueba);
+        tietNumero = findViewById(R.id.tietNumeroRegistrar);
 
         etEdad = findViewById(R.id.etnEdad);
         etPasword = findViewById(R.id.etpPasword);
@@ -112,7 +112,9 @@ public class RegistrarPaciente extends AppCompatActivity {
             paciente.setPass(etPasword.getText().toString());
             paciente.setTipoSangre((String) spinnerTipoSangre.getSelectedItem());
             paciente.setDomicilio("vacio");
-            Toast.makeText(this, paciente.toString(), Toast.LENGTH_SHORT).show();
+            paciente.setNumero(tietNumero.getText().toString());
+
+            //Toast.makeText(this, paciente.toString(), Toast.LENGTH_SHORT).show();
 
             registarDomicilio();
 
@@ -261,14 +263,14 @@ public class RegistrarPaciente extends AppCompatActivity {
             @Override
             public void onResponse(Call<Domicilio> call, Response<Domicilio> response) {
                 if (!response.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(), "Code: ", Toast.LENGTH_LONG).show();
-                    //tvPrueba.setText("Code: "+response.code());
+                    //Toast.makeText(getApplicationContext(), "Code: ", Toast.LENGTH_LONG).show();
+                    /*//tvPrueba.setText("Code: "+response.code());
                     Domicilio domicilioResponce = response.body();
                     String content = "";
                     content+= "Code: "+response.code()+"\n";
                     content += "ID Provincia: "+ domicilioResponce.getIdProvincia()+"\n";
                     content += "ID Canton: "+domicilioResponce.getIdCanton()+"\n";
-                    tvPrueba.setText(content);
+                    tvPrueba.setText(content);*/
                     return;
                 }
             }

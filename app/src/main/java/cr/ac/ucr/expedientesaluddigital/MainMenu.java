@@ -14,6 +14,7 @@ public class MainMenu extends AppCompatActivity {
     Button citasbtn;
     Button alergiasbtn;
     Button vacunasbtn;
+    Button actualizar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +25,8 @@ public class MainMenu extends AppCompatActivity {
         citasbtn=findViewById(R.id.citas_btn);
         alergiasbtn=findViewById(R.id.alergias_btn);
         vacunasbtn=findViewById(R.id.vacunas_btn);
+        actualizar = findViewById(R.id.buttonMostrarActualizar);
+
         citasbtn.setOnClickListener(v->{
             Intent intentInicarSesion=new Intent(getApplicationContext(), ListaCitas.class);
             startActivity(intentInicarSesion);
@@ -35,6 +38,11 @@ public class MainMenu extends AppCompatActivity {
         vacunasbtn.setOnClickListener(v->{
             Intent intentInicarSesion=new Intent(getApplicationContext(), ListaVacunas.class);
             startActivity(intentInicarSesion);
+        });
+
+        actualizar.setOnClickListener(v -> {
+            Intent intentActualizar = new Intent(getApplicationContext(), ActualizarPaciente.class);
+            startActivity(intentActualizar);
         });
     }
 }

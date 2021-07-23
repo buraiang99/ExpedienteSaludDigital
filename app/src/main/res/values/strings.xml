@@ -15,4 +15,9 @@
     <string name="mensaje_estado_civil">Seleccione su estado civil</string>
     <string name="mensaje_edad">Edad</string>
     <string name="pasword_paciente">Contraseña</string>
+    <string name="boton_actualizar">Ver y Actualizar</string>
+    <string name="tipo_sangre">Tipo de sangre</string>
+    <string name="telefono_paciente">Telefono</string>
+    <string name="domicilio_paciente">Domicilio</string>
+    <string name="spinner_provincia">Seleccione una opcion</string>
 </resources>
