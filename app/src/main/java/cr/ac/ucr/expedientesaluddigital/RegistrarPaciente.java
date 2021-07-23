@@ -84,13 +84,10 @@ public class RegistrarPaciente extends AppCompatActivity {
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Click", Toast.LENGTH_LONG).show();
-                //registarDomicilio();
+                Toast.makeText(getApplicationContext(), "Registrando", Toast.LENGTH_LONG).show();
                 registarPaciente();
             }
         });
-        //obtenerProvincias();
-
     } // fin onCreate
 
     private void registarPaciente() {
@@ -131,6 +128,7 @@ public class RegistrarPaciente extends AppCompatActivity {
 
                 }
             });
+            Toast.makeText(getApplicationContext(), "Registrado correctamente", Toast.LENGTH_LONG).show();
             Intent intentPaginaPrincipal = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intentPaginaPrincipal);
         }

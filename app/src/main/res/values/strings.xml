@@ -20,4 +20,6 @@
     <string name="telefono_paciente">Telefono</string>
     <string name="domicilio_paciente">Domicilio</string>
     <string name="spinner_provincia">Seleccione una opcion</string>
+    <string name="afirmacion_dialogo">Si</string>
+    <string name="negacion_dialogo">No</string>
 </resources>

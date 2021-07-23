@@ -88,7 +88,7 @@
             tools:text="@string/edad_paciente" />
 
         <TextView
-            android:id="@+id/tvEdad"
+            android:id="@+id/tvEdadRegistrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -257,7 +257,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout11"
         android:layout_width="409dp"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_marginTop="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -267,8 +267,7 @@
             android:id="@+id/textViewProvincia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="70dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Provincia" />
@@ -277,8 +276,7 @@
             android:id="@+id/textViewCanton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewProvincia"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Canton" />
@@ -287,29 +285,28 @@
             android:id="@+id/textViewDistrito"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewCanton"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewProvincia"
             tools:text="Distrito" />
 
         <TextView
             android:id="@+id/textViewDireccion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.516"
             app:layout_constraintStart_toEndOf="@+id/textViewDistrito"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCanton"
             tools:text="Direccion" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout12"
         android:layout_width="409dp"
-        android:layout_height="45dp"
+        android:layout_height="60dp"
         android:layout_marginTop="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -318,7 +315,7 @@
         <Spinner
             android:id="@+id/spinnerProvincia"
             android:layout_width="150dp"
-            android:layout_height="24dp"
+            android:layout_height="30dp"
             android:layout_marginStart="28dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -328,7 +325,7 @@
         <Spinner
             android:id="@+id/spinnerCanton"
             android:layout_width="150dp"
-            android:layout_height="25dp"
+            android:layout_height="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/spinnerProvincia"
@@ -338,7 +335,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout13"
         android:layout_width="409dp"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:layout_marginTop="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
