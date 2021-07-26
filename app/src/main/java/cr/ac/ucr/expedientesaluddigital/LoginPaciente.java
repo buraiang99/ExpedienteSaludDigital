@@ -63,11 +63,15 @@ public class LoginPaciente extends AppCompatActivity {
                 try {
                     if(response.isSuccessful()){
                         Paciente p=response.body();
-                        Paciente.getInstance(p);
-                        if(p.getPass().equals(passTxt.getText().toString())){
-                            obtenerCitas(codigo);
+                        if(p.getCedula()==null){
+                            pruebatv.setText("La cedula no existe");
                         }else{
-                            pruebatv.setText("Datos erroneos");
+                            Paciente.setPaciente(p);
+                            if(p.getPass().equals(passTxt.getText().toString())){
+                                obtenerCitas(codigo);
+                            }else{
+                                pruebatv.setText("Datos erroneos");
+                            }
                         }
                     }
                 }catch (Exception ex){
@@ -92,7 +96,7 @@ public class LoginPaciente extends AppCompatActivity {
                 try {
                     if(response.isSuccessful()){
                         List<Cita> citas=response.body();
-                        Citas.getInstance(citas);
+                        Citas.setCitas(citas);
                         obtenerVacunas(codigo);
                     }
                 }catch (Exception ex){
@@ -117,7 +121,7 @@ public class LoginPaciente extends AppCompatActivity {
                 try {
                     if(response.isSuccessful()){
                         List<Vacuna> vacunas=response.body();
-                        Vacunas.getInstance(vacunas);
+                        Vacunas.setVacunas(vacunas);
                         obtenerAlergias(codigo);
                     }
                 }catch (Exception ex){
@@ -142,7 +146,7 @@ public class LoginPaciente extends AppCompatActivity {
                 try {
                     if(response.isSuccessful()){
                         List<Alergia> alergias=response.body();
-                        Alergias.getInstance(alergias);
+                        Alergias.setAlergias(alergias);
                         Intent intentInicarSesion=new Intent(getApplicationContext(), MainMenu.class);
                         startActivity(intentInicarSesion);
                     }

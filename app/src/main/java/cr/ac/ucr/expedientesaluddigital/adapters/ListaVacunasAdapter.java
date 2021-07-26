@@ -25,7 +25,7 @@ public class ListaVacunasAdapter extends RecyclerView.Adapter<ListaVacunasAdapte
     private View.OnClickListener listener;
 
     public ListaVacunasAdapter(Context context) {
-        this.vacunas = Vacunas.getInstance(null);
+        this.vacunas = Vacunas.getVacunas();
         this.context = context;
     }
 

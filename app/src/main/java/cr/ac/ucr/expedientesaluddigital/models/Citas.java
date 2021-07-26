@@ -8,10 +8,11 @@ public class Citas {
 
     }
 
-    public static List<Cita> getInstance(List<Cita> c){
-        if(citas==null){
-            citas=c;
-        }
+    public static List<Cita> getCitas() {
         return citas;
+    }
+
+    public static void setCitas(List<Cita> citas) {
+        Citas.citas = citas;
     }
 }

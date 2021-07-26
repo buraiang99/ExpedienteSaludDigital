@@ -25,7 +25,7 @@ public class ListaAlergiasAdapter extends RecyclerView.Adapter<ListaAlergiasAdap
     private View.OnClickListener listener;
 
     public ListaAlergiasAdapter(Context context) {
-        this.alergias = Alergias.getInstance(null);
+        this.alergias = Alergias.getAlergias();
         this.context = context;
     }
 

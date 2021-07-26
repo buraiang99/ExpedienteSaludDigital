@@ -25,7 +25,7 @@ public class ListaCitasAdapter extends RecyclerView.Adapter<ListaCitasAdapter.Vi
     private View.OnClickListener listener;
 
     public ListaCitasAdapter(Context context) {
-        this.citas = Citas.getInstance(null);
+        this.citas = Citas.getCitas();
         this.context = context;
     }
 

@@ -1,8 +1,5 @@
 package cr.ac.ucr.expedientesaluddigital;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,7 +24,6 @@ import cr.ac.ucr.expedientesaluddigital.interfaces.PacienteAPI;
 import cr.ac.ucr.expedientesaluddigital.interfaces.ProvinciaAPI;
 import cr.ac.ucr.expedientesaluddigital.models.Canton;
 import cr.ac.ucr.expedientesaluddigital.models.Distrito;
-import cr.ac.ucr.expedientesaluddigital.models.Domicilio;
 import cr.ac.ucr.expedientesaluddigital.models.Paciente;
 import cr.ac.ucr.expedientesaluddigital.models.Provincia;
 import cr.ac.ucr.expedientesaluddigital.models.RespuestaDomicilio;
@@ -68,7 +64,7 @@ public class ActualizarPaciente extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_editar_datos);
 
-        paciente = Paciente.getInstance(null);
+        paciente = Paciente.getPaciente();
 
         textViewCedula = findViewById(R.id.tvCedula);
         textViewNombre = findViewById(R.id.tvNombreActualizar);

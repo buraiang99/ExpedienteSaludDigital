@@ -24,7 +24,7 @@ public class InfoAlergia extends AppCompatActivity {
         medicamentostv=findViewById(R.id.info_medicamentos_alergia_tv);
         Bundle extra = getIntent().getExtras();
         int pos=extra.getInt("idAlergia");
-        c= Alergias.getInstance(null).get(pos);
+        c= Alergias.getAlergias().get(pos);
         nombretv.setText(c.getNombreAlergia());
         descripciontv.setText(c.getDescripcion());
         medicamentostv.setText(c.getMedicamentos());

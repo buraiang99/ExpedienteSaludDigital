@@ -21,7 +21,7 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
 
         nombretv=findViewById(R.id.nombre_tv);
-        nombretv.setText("Bienvenido "+Paciente.getInstance(null).getNombre());
+        nombretv.setText("Bienvenido "+Paciente.getPaciente().getNombre());
         citasbtn=findViewById(R.id.citas_btn);
         alergiasbtn=findViewById(R.id.alergias_btn);
         vacunasbtn=findViewById(R.id.vacunas_btn);

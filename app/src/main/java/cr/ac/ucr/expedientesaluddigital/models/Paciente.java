@@ -14,13 +14,6 @@ public class Paciente {
     public Paciente() {
     }
 
-    public static Paciente getInstance(Paciente p){
-        if(paciente==null){
-            paciente=p;
-        }
-        return paciente;
-    }
-
     @Override
     public String toString() {
         return "Paciente{" +
@@ -32,6 +25,14 @@ public class Paciente {
                 ", domicilio='" + domicilio + '\'' +
                 ", pass='" + pass + '\'' +
                 '}';
+    }
+
+    public static Paciente getPaciente() {
+        return paciente;
+    }
+
+    public static void setPaciente(Paciente paciente) {
+        Paciente.paciente = paciente;
     }
 
     public String getCedula() {

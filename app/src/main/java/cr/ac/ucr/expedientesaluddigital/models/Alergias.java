@@ -8,10 +8,11 @@ public class Alergias {
 
     }
 
-    public static List<Alergia> getInstance(List<Alergia> a){
-        if(alergias==null){
-            alergias=a;
-        }
+    public static List<Alergia> getAlergias() {
         return alergias;
+    }
+
+    public static void setAlergias(List<Alergia> alergias) {
+        Alergias.alergias = alergias;
     }
 }

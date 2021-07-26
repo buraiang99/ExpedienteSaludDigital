@@ -15,8 +15,8 @@ import cr.ac.ucr.expedientesaluddigital.models.Vacuna;
 import cr.ac.ucr.expedientesaluddigital.models.Vacunas;
 
 public class ListaVacunas extends AppCompatActivity {
-    List<Vacuna> c= Vacunas.getInstance(null);
-    Paciente p= Paciente.getInstance(null);
+    List<Vacuna> c= Vacunas.getVacunas();
+    Paciente p= Paciente.getPaciente();
     private RecyclerView listaVacunasRecycler;
     private ListaVacunasAdapter adapter;
     private TextView titulo;

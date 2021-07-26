@@ -8,10 +8,11 @@ public class Vacunas {
 
     }
 
-    public static List<Vacuna> getInstance(List<Vacuna> v){
-        if(vacunas==null){
-            vacunas=v;
-        }
+    public static List<Vacuna> getVacunas() {
         return vacunas;
+    }
+
+    public static void setVacunas(List<Vacuna> vacunas) {
+        Vacunas.vacunas = vacunas;
     }
 }

@@ -16,8 +16,8 @@ import cr.ac.ucr.expedientesaluddigital.models.Citas;
 import cr.ac.ucr.expedientesaluddigital.models.Paciente;
 
 public class ListaCitas extends AppCompatActivity {
-    List<Cita> c= Citas.getInstance(null);
-    Paciente p= Paciente.getInstance(null);
+    List<Cita> c= Citas.getCitas();
+    Paciente p= Paciente.getPaciente();
     private RecyclerView listaCitasRecycler;
     private List<Citas> citas =new ArrayList<>();
     private ListaCitasAdapter adapter;

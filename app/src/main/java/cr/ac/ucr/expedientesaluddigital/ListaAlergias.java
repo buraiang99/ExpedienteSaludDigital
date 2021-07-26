@@ -15,8 +15,8 @@ import cr.ac.ucr.expedientesaluddigital.models.Alergias;
 import cr.ac.ucr.expedientesaluddigital.models.Paciente;
 
 public class ListaAlergias extends AppCompatActivity {
-    List<Alergia> c= Alergias.getInstance(null);
-    Paciente p= Paciente.getInstance(null);
+    List<Alergia> c= Alergias.getAlergias();
+    Paciente p= Paciente.getPaciente();
     private RecyclerView listaCitasRecycler;
     private ListaAlergiasAdapter adapter;
     private TextView titulo;

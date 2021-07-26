@@ -28,7 +28,7 @@ public class InfoCita extends AppCompatActivity {
         diagnosticotv=findViewById(R.id.info_diagnostico_tv);
         Bundle extra = getIntent().getExtras();
         int pos=extra.getInt("idCita");
-        c= Citas.getInstance(null).get(pos);
+        c= Citas.getCitas().get(pos);
         fechatv.setText(c.getFecha());
         horatv.setText(c.getHora());
         centroSaludtv.setText(c.getCentroSalud());

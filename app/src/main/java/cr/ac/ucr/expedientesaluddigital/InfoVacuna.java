@@ -26,7 +26,7 @@ public class InfoVacuna extends AppCompatActivity {
         centroSaludtv=findViewById(R.id.info_centrosalud_vacuna_tv);
         Bundle extra = getIntent().getExtras();
         int pos=extra.getInt("idVacuna");
-        c= Vacunas.getInstance(null).get(pos);
+        c= Vacunas.getVacunas().get(pos);
         nombretv.setText(c.getNombreVacuna());
         descripciontv.setText(c.getDescripcion());
         fechaAplicaciontv.setText(c.getFechaAplicacion());
