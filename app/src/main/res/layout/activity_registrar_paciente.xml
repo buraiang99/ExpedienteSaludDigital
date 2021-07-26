@@ -172,7 +172,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="50dp"
             android:backgroundTint="@color/black"
             android:prompt="@string/mensaje_tipo_sangre"
@@ -186,22 +186,21 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="50dp"
             android:backgroundTint="@color/black"
             android:prompt="@string/mensaje_estado_civil"
             android:spinnerMode="dialog"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/sTipoSangre"
-            app:layout_constraintTop_toBottomOf="@+id/etnEdad" />
+            app:layout_constraintTop_toBottomOf="@+id/tilNumero" />
 
         <EditText
             android:id="@+id/etnEdad"
-            android:layout_width="0dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="100dp"
             android:backgroundTint="@color/black"
             android:ems="10"
             android:hint="@string/mensaje_edad"
@@ -214,7 +213,6 @@
             android:textColorHint="@color/letrarSalud"
             android:textColorLink="@color/letrarSalud"
             android:textCursorDrawable="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tilNombre" />
 
@@ -252,19 +250,21 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tilNumero" />
+            app:layout_constraintTop_toBottomOf="@+id/etpPasword" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilNumero"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="50dp"
             android:textColorHint="@color/letrarSalud"
             app:boxBackgroundColor="@color/backgroundInteriorSalud"
             app:helperTextTextColor="@color/letrarSalud"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etpPasword">
+            app:layout_constraintStart_toEndOf="@+id/etnEdad"
+            app:layout_constraintTop_toBottomOf="@+id/tilNombre">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tietNumeroRegistrar"
