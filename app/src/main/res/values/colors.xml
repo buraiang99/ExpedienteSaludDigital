@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#0071BC</color>
-    <color name="purple_500">#03053B</color>
+    <color name="purple_500">#231F8C</color>
     <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_200">#7471D9</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="btnRegistrar">#03053B</color>
+    <color name="btnRegistrar">#231F8C</color>
     <color name="backgroundSalud">#0071BC</color>
     <color name="backgroundInteriorSalud">#E6F3FF</color>
     <color name="letrarSalud">#252623</color>
